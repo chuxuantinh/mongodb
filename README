@@ -2,6 +2,31 @@ MongoDB README
 
 Welcome to MongoDB!
 
+Cm:  sudo mv /Users/macbookpro/Downloads/mongodb-macos-x86_64-4.4.4 /usr/local/mongodb
+
+Download, extract and move:
+wget http://downloads.mongodb.org/osx/mongodb-osx-x86_64-2.6.12.tgz
+tar xzf mongodb-osx-x86_64-2.6.12.tgz
+mv mongodb-osx-x86_64-2.6.12/ /usr/local/mongodb/
+Add to file ~/.zshrc this:
+export PATH="$PATH:/usr/local/mongodb/bin"
+PS: .bash_profile or .profile not worked in my case
+Make directory for data and set rights:
+mkdir -p ~/data/db
+chown -R mongodb.mongodb ~/data/db
+Run MongoDB:
+mongod --dbpath ~/data/db
+
+
+Chu y tren vi_bash _profile khong chay -> zprofile nhes
+
+# Setting PATH for Python 3.9
+# The original version is saved in .zprofile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.9/bin:${PATH}"
+export PATH
+export PATH="$PATH:/Users/macbookpro/Documents/mongodb/bin"
+
+
 COMPONENTS
 
   mongod - The database server.
